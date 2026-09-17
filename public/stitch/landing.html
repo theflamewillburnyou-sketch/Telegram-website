@@ -31,10 +31,25 @@
     .animate-marquee {
       display: flex;
       width: max-content;
-      animation: tickerSlide 40s linear infinite;
+      align-items: center;
+      flex-wrap: nowrap;
+      animation: tickerSlide 120s linear infinite;
     }
     .animate-marquee:hover {
       animation-play-state: paused;
+    }
+    .animate-marquee > * {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    #ms-ticker-track .ms-ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      white-space: nowrap;
+      flex: 0 0 auto;
+      line-height: 1;
     }
 
     /* —— Responsive polish —— */
@@ -337,46 +352,14 @@
 </head>
 <body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
 <!-- TOP LIVE TICKER BAR (Sticky Header Zone) -->
-<aside aria-label="Live Market Ticker" class="fixed top-0 left-0 right-0 z-50 bg-[#080a0f] border-b border-surface-container-high/60 h-9 flex items-center overflow-hidden">
+<aside aria-label="Live Market Ticker" class="fixed top-0 left-0 right-0 z-50 bg-[#080a0f] border-b border-surface-container-high/60 h-9 flex items-center overflow-hidden leading-none">
 <div class="h-full px-3 md:px-4 bg-surface-container-lowest z-10 flex items-center gap-2 border-r border-surface-container-high/80 shrink-0 shadow-[4px_0_12px_rgba(0,0,0,0.5)]">
 <span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
-<span class="font-label-caps text-[10px] text-on-surface uppercase tracking-widest font-bold whitespace-nowrap ticker-live-label"><span class="ticker-full">● LIVE GLOBAL MARKETS</span><span class="ticker-short" style="display:none">● LIVE</span></span>
+<span class="font-label-caps text-[10px] text-on-surface uppercase tracking-widest font-bold whitespace-nowrap ticker-live-label leading-none"><span class="ticker-full">● LIVE GLOBAL MARKETS</span><span class="ticker-short" style="display:none">● LIVE</span></span>
 </div>
-<div class="relative w-full overflow-hidden flex items-center">
-<div class="animate-marquee flex items-center gap-8 text-[12px] font-label-code text-on-surface-variant pl-4">
-<!-- Loop Item Group A -->
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">SPX</span> <span class="text-secondary">5,864.20</span> <span class="text-tertiary font-medium">+0.48%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">NDX</span> <span class="text-secondary">20,410.15</span> <span class="text-tertiary font-medium">+0.72%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BRENT CRUDE</span> <span class="text-secondary">$82.40/bbl</span> <span class="text-tertiary font-medium">+1.85%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">GOLD (XAU/USD)</span> <span class="text-secondary">$2,748.60</span> <span class="text-tertiary font-medium">+0.64%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BITCOIN (BTC)</span> <span class="text-secondary">$68,420</span> <span class="text-error font-medium">-0.35%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">ETHEREUM (ETH)</span> <span class="text-secondary">$2,640</span> <span class="text-tertiary font-medium">+1.12%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">US 10Y YIELD</span> <span class="text-secondary">4.08%</span> <span class="text-error font-medium">-0.03%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">DXY DOLLAR</span> <span class="text-secondary">103.82</span> <span class="text-error font-medium">-0.18%</span></span>
-<span class="text-outline-variant">/</span>
-<!-- Loop Item Group B (Seamless Repeat) -->
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">SPX</span> <span class="text-secondary">5,864.20</span> <span class="text-tertiary font-medium">+0.48%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">NDX</span> <span class="text-secondary">20,410.15</span> <span class="text-tertiary font-medium">+0.72%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BRENT CRUDE</span> <span class="text-secondary">$82.40/bbl</span> <span class="text-tertiary font-medium">+1.85%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">GOLD (XAU/USD)</span> <span class="text-secondary">$2,748.60</span> <span class="text-tertiary font-medium">+0.64%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BITCOIN (BTC)</span> <span class="text-secondary">$68,420</span> <span class="text-error font-medium">-0.35%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">ETHEREUM (ETH)</span> <span class="text-secondary">$2,640</span> <span class="text-tertiary font-medium">+1.12%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">US 10Y YIELD</span> <span class="text-secondary">4.08%</span> <span class="text-error font-medium">-0.03%</span></span>
-<span class="text-outline-variant">/</span>
-<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">DXY DOLLAR</span> <span class="text-secondary">103.82</span> <span class="text-error font-medium">-0.18%</span></span>
+<div class="relative w-full h-full overflow-hidden flex items-center">
+<div id="ms-ticker-track" class="animate-marquee flex items-center gap-8 text-[12px] font-label-code text-on-surface-variant pl-4 leading-none" aria-live="off">
+<span class="ms-ticker-item text-outline">Loading live prices…</span>
 </div>
 </div>
 </aside>
@@ -1322,6 +1305,67 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth >= 1024) close();
   });
+})();
+</script>
+<script>
+(function msLiveTicker() {
+  var track = document.getElementById('ms-ticker-track');
+  if (!track) return;
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function itemHtml(item) {
+    var pct = item.changePct;
+    var cls = 'text-outline';
+    var txt = '—';
+    if (typeof pct === 'number' && isFinite(pct)) {
+      cls = pct >= 0 ? 'text-tertiary font-medium' : 'text-error font-medium';
+      txt = (pct >= 0 ? '+' : '') + pct.toFixed(2) + '%';
+    }
+    return (
+      '<span class="ms-ticker-item">' +
+      '<span class="text-on-surface font-semibold">' + esc(item.label) + '</span>' +
+      '<span class="text-secondary">' + esc(item.price) + '</span>' +
+      '<span class="' + cls + '">' + txt + '</span>' +
+      '</span>'
+    );
+  }
+
+  function render(items) {
+    if (!items || !items.length) {
+      track.innerHTML = '<span class="ms-ticker-item text-outline">Live prices unavailable</span>';
+      return;
+    }
+    var sep = '<span class="text-outline-variant shrink-0">/</span>';
+    var row = items.map(itemHtml).join(sep);
+    // Duplicate for seamless marquee loop
+    track.innerHTML = row + sep + row;
+    // Keep scroll speed similar to the short ticker (~40s for ~8 symbols)
+    var duration = Math.max(80, Math.round(items.length * 5));
+    track.style.animationDuration = duration + 's';
+  }
+
+  async function load() {
+    try {
+      var res = await fetch('/api/ticker', { cache: 'no-store' });
+      if (!res.ok) throw new Error('bad status');
+      var data = await res.json();
+      render(data.items || []);
+    } catch (e) {
+      if (!track.querySelector('.text-on-surface')) {
+        track.innerHTML = '<span class="inline-flex items-center gap-1.5 text-outline">Live prices unavailable</span>';
+      }
+    }
+  }
+
+  load();
+  setInterval(load, 60000);
 })();
 </script>
 </body></html>
