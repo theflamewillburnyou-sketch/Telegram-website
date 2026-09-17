@@ -223,16 +223,14 @@
     .filter-btn:active { transform: scale(0.97); }
 
     .dispatch-card {
-      transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .dispatch-card.is-filtering-out {
-      opacity: 0;
-      transform: translateY(10px) scale(0.98);
-      pointer-events: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.25s ease;
     }
     .dispatch-card.is-filtering-in {
-      opacity: 1;
-      transform: translateY(0) scale(1);
+      animation: msFilterIn 0.28s ease both;
+    }
+    @keyframes msFilterIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .faq-item {
@@ -1178,7 +1176,7 @@
     document.querySelectorAll('.ms-reveal').forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Filter tabs with fade
+  // Filter tabs — hide immediately so grid doesn't leave a middle gap
   window.filterCards = function (category) {
     var cards = document.querySelectorAll('.dispatch-card');
     var buttons = document.querySelectorAll('.filter-btn');
@@ -1193,33 +1191,17 @@
 
     cards.forEach(function (card) {
       var show = category === 'all' || card.classList.contains(category);
-      if (reduceMotion) {
-        card.style.display = show ? 'flex' : 'none';
-        card.classList.remove('is-filtering-out', 'is-filtering-in');
-        return;
-      }
+      var wasHidden = card.style.display === 'none';
+      card.classList.remove('is-filtering-in');
       if (show) {
-        if (card.style.display === 'none') {
-          card.style.display = 'flex';
-          card.classList.add('is-filtering-out');
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              card.classList.remove('is-filtering-out');
-              card.classList.add('is-filtering-in');
-            });
-          });
-        } else {
-          card.classList.remove('is-filtering-out');
+        card.style.display = 'flex';
+        if (!reduceMotion && wasHidden) {
+          // Fade in after layout is already left-aligned
+          void card.offsetWidth;
           card.classList.add('is-filtering-in');
         }
       } else {
-        card.classList.add('is-filtering-out');
-        card.classList.remove('is-filtering-in');
-        window.setTimeout(function () {
-          if (card.classList.contains('is-filtering-out')) {
-            card.style.display = 'none';
-          }
-        }, 320);
+        card.style.display = 'none';
       }
     });
   };
