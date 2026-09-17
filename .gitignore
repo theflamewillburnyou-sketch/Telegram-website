@@ -33,6 +33,13 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# local MCP secrets (API keys)
+.cursor/mcp.json
+
+# stitch API dumps (if regenerated)
+stitch-*.json
+stitch-export/
+
 # vercel
 .vercel
 

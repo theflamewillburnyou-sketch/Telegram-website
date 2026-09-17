@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Midnight Society | Curated Market Alerts</title>
+<meta name="description" content="Join Midnight Society for AI-filtered stock, crypto &amp; commodities alerts. Major moves only—signal over noise. Join free on Telegram."/>
+<meta name="keywords" content="market news telegram, stock crypto commodities alerts, curated market signals, midnight society"/>
+<meta property="og:title" content="Midnight Society | Curated Market Alerts"/>
+<meta property="og:description" content="Join Midnight Society for AI-filtered stock, crypto &amp; commodities alerts. Major moves only—signal over noise. Join free on Telegram."/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Midnight Society | Curated Market Alerts"/>
+<meta name="twitter:description" content="Join Midnight Society for AI-filtered stock, crypto &amp; commodities alerts. Major moves only—signal over noise. Join free on Telegram."/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body { margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+
+    @keyframes tickerSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: tickerSlide 40s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    /* —— Responsive polish —— */
+    html { -webkit-text-size-adjust: 100%; }
+    body { overflow-x: hidden; }
+    img, svg, video { max-width: 100%; height: auto; }
+
+    @media (max-width: 1023px) {
+      .ms-nav-links { display: none !important; }
+      .ms-site-header { position: fixed; }
+      .ms-nav-panel {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 1rem 1.25rem 1.25rem;
+        background: rgba(11, 14, 20, 0.96);
+        border-bottom: 1px solid rgba(39, 42, 49, 0.8);
+        backdrop-filter: blur(16px);
+        z-index: 45;
+        transform-origin: top center;
+        transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s ease;
+      }
+      .ms-nav-panel:not([hidden]) {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: auto;
+      }
+      .ms-nav-panel[hidden] {
+        display: flex !important;
+        opacity: 0;
+        transform: translateY(-0.5rem);
+        pointer-events: none;
+        visibility: hidden;
+      }
+      .ms-nav-panel a {
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid rgba(39, 42, 49, 0.5);
+      }
+    }
+    @media (min-width: 1024px) {
+      .ms-nav-panel { display: none !important; visibility: hidden !important; }
+      .ms-mobile-toggle { display: none !important; }
+    }
+
+    @media (max-width: 767px) {
+      .ticker-live-label span.ticker-full { display: none; }
+      .ticker-live-label span.ticker-short { display: inline !important; }
+      .brand-wordmark { font-size: 12px !important; letter-spacing: 0.06em !important; }
+      .footer-copy { white-space: normal !important; }
+      .ms-join-nav { font-size: 12px !important; padding-left: 0.65rem !important; padding-right: 0.65rem !important; }
+      .hero-status-pill {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        max-width: 100% !important;
+        border-radius: 0.75rem !important;
+        row-gap: 0.35rem !important;
+      }
+      .hero-status-pill .hero-status-copy {
+        width: 100%;
+        text-align: center;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+      }
+      #filter-container {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap !important;
+        max-width: 100%;
+      }
+      #filter-container .filter-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+      .dispatch-card, .audience-card, .step-card {
+        min-width: 0;
+      }
+      .font-headline-lg, h2.font-newsreader {
+        font-size: 1.75rem !important;
+        line-height: 1.25 !important;
+      }
+      .font-body-lg {
+        font-size: 1rem !important;
+        line-height: 1.55 !important;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      .px-margin, .md\:px-margin { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-marquee { animation: none !important; }
+      .animate-ping, .animate-pulse { animation: none !important; }
+      html { scroll-behavior: auto !important; }
+      .ms-reveal, .ms-hero-animate > * {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
+      .ms-nav-panel:not([hidden]),
+      .dispatch-card,
+      .filter-btn,
+      .faq-content,
+      .faq-icon {
+        transition: none !important;
+      }
+    }
+
+    /* —— Motion & smooth UX —— */
+    html { scroll-behavior: smooth; }
+    section[id], footer { scroll-margin-top: 7.5rem; }
+
+    .ms-nav-links a,
+    .ms-nav-panel a {
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+    .ms-nav-links a.is-active,
+    .ms-nav-panel a.is-active {
+      color: #f2ca50 !important;
+      font-weight: 600;
+    }
+
+    .ms-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+    .ms-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ms-reveal-delay-1 { transition-delay: 0.08s; }
+    .ms-reveal-delay-2 { transition-delay: 0.16s; }
+    .ms-reveal-delay-3 { transition-delay: 0.24s; }
+
+    .ms-hero-animate > * {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: msHeroIn 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .ms-hero-animate > *:nth-child(1) { animation-delay: 0.05s; }
+    .ms-hero-animate > *:nth-child(2) { animation-delay: 0.14s; }
+    .ms-hero-animate > *:nth-child(3) { animation-delay: 0.22s; }
+    .ms-hero-animate > *:nth-child(4) { animation-delay: 0.3s; }
+    .ms-hero-animate > *:nth-child(5) { animation-delay: 0.38s; }
+    .ms-hero-animate > *:nth-child(6) { animation-delay: 0.46s; }
+    .ms-hero-animate > *:nth-child(7) { animation-delay: 0.54s; }
+    @keyframes msHeroIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .filter-btn {
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    }
+    .filter-btn:active { transform: scale(0.97); }
+
+    .dispatch-card {
+      transition: opacity 0.35s ease, transform 0.35s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dispatch-card.is-filtering-out {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+      pointer-events: none;
+    }
+    .dispatch-card.is-filtering-in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .faq-item {
+      transition: border-color 0.25s ease, background-color 0.25s ease;
+    }
+    .faq-content {
+      transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .faq-content.is-open {
+      opacity: 1;
+    }
+    .faq-icon {
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    a, button {
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.25s ease, transform 0.2s ease, opacity 0.2s ease;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "outline-variant": "#4d4635",
+            "on-secondary": "#293043",
+            "surface-dim": "#10131a",
+            "on-tertiary-fixed-variant": "#005321",
+            "primary-fixed": "#ffe088",
+            "error": "#ffb4ab",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed": "#6bff8f",
+            "secondary-fixed": "#dbe2fb",
+            "tertiary": "#53e97d",
+            "secondary-fixed-dim": "#bfc6de",
+            "tertiary-fixed-dim": "#4ae176",
+            "background": "#10131a",
+            "on-primary-fixed": "#241a00",
+            "on-primary-fixed-variant": "#574500",
+            "surface-tint": "#e9c349",
+            "on-secondary-container": "#aeb4cc",
+            "on-tertiary-container": "#005020",
+            "surface-container-low": "#191c22",
+            "on-tertiary-fixed": "#002109",
+            "on-error": "#690005",
+            "surface-variant": "#32353c",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#e9c349",
+            "tertiary-container": "#2ecc64",
+            "inverse-surface": "#e0e2eb",
+            "on-surface-variant": "#d0c5af",
+            "on-background": "#e0e2eb",
+            "surface": "#10131a",
+            "on-error-container": "#ffdad6",
+            "primary": "#f2ca50",
+            "surface-container": "#1d2026",
+            "inverse-on-surface": "#2d3037",
+            "on-primary-container": "#554300",
+            "on-primary": "#3c2f00",
+            "primary-container": "#d4af37",
+            "outline": "#99907c",
+            "surface-container-highest": "#32353c",
+            "on-tertiary": "#003915",
+            "on-secondary-fixed": "#141b2d",
+            "secondary-container": "#3f465a",
+            "on-surface": "#e0e2eb",
+            "surface-bright": "#363940",
+            "surface-container-lowest": "#0b0e14",
+            "secondary": "#bfc6de",
+            "inverse-primary": "#735c00",
+            "on-secondary-fixed-variant": "#3f465a"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "headline-md": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "display-hero-mobile": ["Newsreader"],
+            "label-meta": ["JetBrains Mono"],
+            "body-sm": ["Hanken Grotesk"],
+            "label-code": ["JetBrains Mono"],
+            "display-hero": ["Newsreader"],
+            "label-caps": ["Hanken Grotesk"],
+            "headline-lg": ["Newsreader"],
+            "headline-lg-mobile": ["Newsreader"],
+            "headline-sm": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"]
+          },
+          "fontSize": {
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero-mobile": ["34px", { "lineHeight": "42px", "letterSpacing": "-0.015em", "fontWeight": "400" }],
+            "label-meta": ["11px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "500" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "label-code": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary">
+<!-- TOP LIVE TICKER BAR (Sticky Header Zone) -->
+<aside aria-label="Live Market Ticker" class="fixed top-0 left-0 right-0 z-50 bg-[#080a0f] border-b border-surface-container-high/60 h-9 flex items-center overflow-hidden">
+<div class="h-full px-3 md:px-4 bg-surface-container-lowest z-10 flex items-center gap-2 border-r border-surface-container-high/80 shrink-0 shadow-[4px_0_12px_rgba(0,0,0,0.5)]">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-caps text-[10px] text-on-surface uppercase tracking-widest font-bold whitespace-nowrap ticker-live-label"><span class="ticker-full">● LIVE GLOBAL MARKETS</span><span class="ticker-short" style="display:none">● LIVE</span></span>
+</div>
+<div class="relative w-full overflow-hidden flex items-center">
+<div class="animate-marquee flex items-center gap-8 text-[12px] font-label-code text-on-surface-variant pl-4">
+<!-- Loop Item Group A -->
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">SPX</span> <span class="text-secondary">5,864.20</span> <span class="text-tertiary font-medium">+0.48%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">NDX</span> <span class="text-secondary">20,410.15</span> <span class="text-tertiary font-medium">+0.72%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BRENT CRUDE</span> <span class="text-secondary">$82.40/bbl</span> <span class="text-tertiary font-medium">+1.85%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">GOLD (XAU/USD)</span> <span class="text-secondary">$2,748.60</span> <span class="text-tertiary font-medium">+0.64%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BITCOIN (BTC)</span> <span class="text-secondary">$68,420</span> <span class="text-error font-medium">-0.35%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">ETHEREUM (ETH)</span> <span class="text-secondary">$2,640</span> <span class="text-tertiary font-medium">+1.12%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">US 10Y YIELD</span> <span class="text-secondary">4.08%</span> <span class="text-error font-medium">-0.03%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">DXY DOLLAR</span> <span class="text-secondary">103.82</span> <span class="text-error font-medium">-0.18%</span></span>
+<span class="text-outline-variant">/</span>
+<!-- Loop Item Group B (Seamless Repeat) -->
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">SPX</span> <span class="text-secondary">5,864.20</span> <span class="text-tertiary font-medium">+0.48%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">NDX</span> <span class="text-secondary">20,410.15</span> <span class="text-tertiary font-medium">+0.72%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BRENT CRUDE</span> <span class="text-secondary">$82.40/bbl</span> <span class="text-tertiary font-medium">+1.85%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">GOLD (XAU/USD)</span> <span class="text-secondary">$2,748.60</span> <span class="text-tertiary font-medium">+0.64%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">BITCOIN (BTC)</span> <span class="text-secondary">$68,420</span> <span class="text-error font-medium">-0.35%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">ETHEREUM (ETH)</span> <span class="text-secondary">$2,640</span> <span class="text-tertiary font-medium">+1.12%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">US 10Y YIELD</span> <span class="text-secondary">4.08%</span> <span class="text-error font-medium">-0.03%</span></span>
+<span class="text-outline-variant">/</span>
+<span class="inline-flex items-center gap-1.5"><span class="text-on-surface font-semibold">DXY DOLLAR</span> <span class="text-secondary">103.82</span> <span class="text-error font-medium">-0.18%</span></span>
+</div>
+</div>
+</aside>
+<!-- NAVIGATION BAR -->
+<header class="ms-site-header fixed top-9 left-0 right-0 z-40 bg-surface-container-lowest/85 backdrop-blur-xl border-b border-surface-container-high/40 shadow-[0_4px_16px_rgba(0,0,0,0.5)]">
+<div class="h-16 md:h-20 w-full px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<a class="flex items-center gap-space-sm group focus:outline-none" href="#">
+<img alt="Midnight Society Logo" class="w-8 h-8 rounded-full object-cover shadow-[0_0_12px_rgba(242,202,80,0.25)] border border-primary/30 group-hover:border-primary transition-colors" src="/stitch/asset-0.jpg"/>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-widest font-semibold group-hover:text-primary transition-colors brand-wordmark">Midnight Society</span>
+</a>
+<div class="hidden xl:flex items-center gap-space-xs px-space-sm py-0.5 rounded-full bg-surface-container-low border border-surface-container-high/60">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-meta text-label-meta text-on-surface-variant uppercase tracking-wider">MAJOR ALERTS ONLY · AI-FILTERED</span>
+</div>
+</div>
+<nav class="ms-nav-links hidden lg:flex items-center gap-space-lg">
+<a class="font-label-caps text-label-caps uppercase text-primary font-semibold transition-colors" href="#philosophy">Problem</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#how-it-works">How It Works</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#intel">What You Get</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#audience">Who It's For</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-on-surface transition-colors" href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-2 sm:gap-space-md relative">
+<button type="button" class="ms-mobile-toggle lg:hidden inline-flex items-center justify-center w-10 h-10 rounded border border-surface-container-high text-on-surface" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<a class="ms-join-nav px-3 sm:px-space-md py-space-xs rounded bg-primary text-on-primary font-headline-sm text-body-sm font-semibold tracking-wide shadow-[0_0_16px_rgba(212,175,55,0.25)] hover:bg-primary-fixed hover:shadow-[0_0_24px_rgba(212,175,55,0.4)] transition-all active:scale-[0.99] text-center inline-block whitespace-nowrap" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">
+          Join Channel
+        </a>
+</div>
+</div>
+<nav id="mobile-nav" class="ms-nav-panel lg:hidden" hidden>
+<a class="font-label-caps text-label-caps uppercase text-primary font-semibold" href="#philosophy">Problem</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant" href="#how-it-works">How It Works</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant" href="#intel">What You Get</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant" href="#audience">Who It's For</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant" href="#faq">FAQ</a>
+</nav>
+</header>
+<main class="w-full pt-[100px] md:pt-[116px] bg-background">
+<div class="flex flex-col w-full text-on-surface bg-background">
+<!-- SECTION 1: HERO SECTION -->
+<section class="relative w-full overflow-hidden border-b border-surface-container-high/40 min-h-[min(90vh,920px)] sm:min-h-[90vh] flex items-center justify-center py-10 sm:py-0">
+<!-- Atmospheric Nocturnal City Canvas -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center brightness-[0.34] contrast-125 filter" style="background-image: url('/stitch/asset-1.jpg')"></div>
+<!-- Auric & Slate Gradient Overlay -->
+<div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/65 to-background"></div>
+<div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(212,175,55,0.14),transparent_70%)]"></div>
+</div>
+<!-- Hero Content Clamped Layout -->
+<div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-space-xl flex flex-col items-center text-center ms-hero-animate">
+<!-- Status Pill -->
+<div class="hero-status-pill inline-flex items-center gap-space-sm px-space-md py-space-xs rounded-full bg-surface-container-lowest/85 border border-primary-container/30 backdrop-blur-md mb-space-lg shadow-[0_0_24px_rgba(212,175,55,0.12)] max-w-full">
+<img alt="Midnight Society Icon" class="w-4 h-4 rounded-full object-contain shrink-0" src="/stitch/asset-0.jpg"/>
+<span class="hero-status-copy font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">
+              Midnight Society · Curated Market Alerts on Telegram
+            </span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-meta text-label-meta text-primary font-semibold">SIGNAL OVER NOISE</span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-display-hero text-[32px] leading-[40px] sm:text-[40px] sm:leading-[48px] md:text-[52px] md:leading-[60px] lg:text-[56px] lg:leading-[64px] text-on-surface max-w-5xl tracking-tight mb-space-md px-1">
+            Major market moves. <br/>
+<span class="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed via-primary to-primary-container">
+              Nothing else.
+            </span>
+          </h1>
+<!-- Authoritative Subhead -->
+<p class="font-body-lg text-body-lg text-secondary max-w-[68ch] mx-auto mb-space-xl leading-relaxed">
+            A quieter Telegram channel for people who choose signal over noise across stocks, crypto, and commodities.
+          </p>
+<!-- Primary CTA Button -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full max-w-md mx-auto mb-space-sm">
+<a class="w-full sm:w-auto px-space-xl py-space-md rounded bg-primary text-on-primary font-headline-sm text-body-lg font-semibold tracking-wide flex items-center justify-center gap-space-sm shadow-[0_0_24px_rgba(212,175,55,0.35)] hover:bg-primary-fixed hover:shadow-[0_0_32px_rgba(212,175,55,0.5)] transition-all transform hover:-translate-y-0.5 active:scale-[0.99]" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Join the Channel on Telegram</span>
+</a>
+</div>
+<!-- Objection Handling Pill -->
+<div class="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 font-label-meta text-label-meta text-outline mb-space-lg uppercase tracking-wider">
+<span>Major alerts only</span>
+<span>•</span>
+<span>AI-filtered</span>
+<span>•</span>
+<span>Growing member base</span>
+</div>
+<!-- Secondary Custom Bot Link -->
+<div class="mb-space-xl">
+<a class="group inline-flex flex-wrap items-center justify-center gap-x-space-xs gap-y-1 font-label-code text-label-code text-on-surface-variant hover:text-primary transition-colors bg-surface-container-low/70 hover:bg-surface-container/90 px-space-md py-space-xs rounded border border-outline-variant/30 backdrop-blur max-w-full" href="https://t.me/MidnightSocietyNewsBot" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">smart_toy</span>
+<span>Open the bot for preferences:</span>
+<span class="text-primary font-semibold group-hover:underline break-all">@MidnightSocietyNewsBot</span>
+<span class="material-symbols-outlined text-[14px] transform group-hover:translate-x-0.5 transition-transform shrink-0">arrow_forward</span>
+</a>
+</div>
+<!-- Key Stats Strip -->
+<div class="w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-space-sm pt-space-lg border-t border-surface-container-high/40">
+<div class="p-3 sm:p-space-md rounded bg-surface-container-lowest/60 border border-surface-container-high/40 backdrop-blur text-left min-w-0">
+<div class="font-label-meta text-label-meta text-outline uppercase tracking-wider mb-space-xs leading-snug">Focus</div>
+<div class="font-headline-md text-headline-md text-primary font-bold">Major moves</div>
+<div class="font-body-sm text-body-sm text-secondary leading-snug">Nothing else</div>
+</div>
+<div class="p-3 sm:p-space-md rounded bg-surface-container-lowest/60 border border-surface-container-high/40 backdrop-blur text-left min-w-0">
+<div class="font-label-meta text-label-meta text-outline uppercase tracking-wider mb-space-xs leading-snug">Filter</div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold">AI-curated</div>
+<div class="font-body-sm text-body-sm text-secondary leading-snug">Noise screened out</div>
+</div>
+<div class="p-3 sm:p-space-md rounded bg-surface-container-lowest/60 border border-surface-container-high/40 backdrop-blur text-left min-w-0">
+<div class="font-label-meta text-label-meta text-outline uppercase tracking-wider mb-space-xs leading-snug">Coverage</div>
+<div class="font-headline-md text-headline-md text-tertiary font-bold">3 markets</div>
+<div class="font-body-sm text-body-sm text-secondary leading-snug">Stocks, crypto, commodities</div>
+</div>
+<div class="p-3 sm:p-space-md rounded bg-surface-container-lowest/60 border border-surface-container-high/40 backdrop-blur text-left min-w-0">
+<div class="font-label-meta text-label-meta text-outline uppercase tracking-wider mb-space-xs leading-snug">Access</div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold">Free</div>
+<div class="font-body-sm text-body-sm text-secondary leading-snug">Join on Telegram</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE PROBLEM & PHILOSOPHY (Signal vs. Noise) -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto" id="philosophy">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Optical Prism Visual Anchor -->
+<div class="lg:col-span-5 relative group">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/40 shadow-[0_0_32px_rgba(0,0,0,0.8)]">
+<img alt="Signal over noise — clarity cutting through market overload" class="w-full h-auto object-cover opacity-90 transition-transform duration-700 group-hover:scale-105" src="/stitch/asset-2.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-85"></div>
+<div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-space-sm sm:p-space-md bg-surface-container-low/90 backdrop-blur border border-surface-container-high/60 rounded">
+<div class="flex flex-col xs:flex-row sm:flex-row sm:items-center justify-between gap-1 font-label-meta text-label-meta mb-1">
+<span class="text-primary font-semibold">SIGNAL OVER NOISE</span>
+<span class="text-tertiary">CURATED ALERTS</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary">
+                  Clarity cutting through endless market noise—major moves only.
+                </p>
+</div>
+</div>
+</div>
+<!-- Problem Narrative Breakdown -->
+<div class="lg:col-span-7 flex flex-col justify-center">
+<div class="inline-flex items-center gap-space-xs font-label-caps text-label-caps text-primary uppercase tracking-widest mb-space-sm">
+<span class="w-2 h-0.5 bg-primary"></span>
+              The Problem
+            </div>
+<h2 class="font-headline-lg text-headline-lg md:text-[40px] md:leading-[48px] text-on-surface mb-space-md font-newsreader">
+              Endless feeds steal your edge
+            </h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-[68ch] mb-space-md leading-relaxed">
+              Market news never stops. Most Telegram channels and timelines reward volume: headlines stacked on headlines until attention frays and real moves get buried. Information overload is not more intelligence—it is less clarity.
+            </p>
+<p class="font-body-lg text-body-lg text-secondary max-w-[68ch] mb-space-lg leading-relaxed">
+              If your edge depends on noticing what matters, noise is the tax you cannot afford.
+            </p>
+<!-- Comparative Contrast Table -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Left: The Feed Circus -->
+<div class="p-space-lg rounded bg-surface-container-low/60 border border-error/25 flex flex-col justify-between">
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-sm border-b border-error/20 mb-space-md">
+<span class="font-label-caps text-label-caps text-error uppercase font-bold tracking-wider">Endless Noise</span>
+<span class="material-symbols-outlined text-error text-[18px] shrink-0">error</span>
+</div>
+<ul class="space-y-space-sm font-body-sm text-body-sm text-secondary">
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">×</span>
+<span>Headlines stacked until attention frays</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">×</span>
+<span>Volume rewarded over clarity</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">×</span>
+<span>Real moves buried under routine chatter</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-error font-bold">×</span>
+<span>Information overload mistaken for intelligence</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs font-label-meta text-label-meta text-outline">
+                  Result: Less clarity, weaker edge
+                </div>
+</div>
+<!-- Right: Midnight Society Standard -->
+<div class="p-space-lg rounded bg-surface-container-high/40 border border-primary/30 shadow-[0_0_24px_rgba(212,175,55,0.08)] flex flex-col justify-between">
+<div>
+<div class="flex flex-wrap items-center justify-between gap-2 pb-space-sm border-b border-primary/20 mb-space-md">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider">Midnight Society</span>
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified</span>
+</div>
+<ul class="space-y-space-sm font-body-sm text-body-sm text-on-surface">
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold">✓</span>
+<span>Major moves only—not routine chatter</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold">✓</span>
+<span>Stocks, crypto, and commodities in one channel</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold">✓</span>
+<span>AI-filtered so belonging feels selective, not loud</span>
+</li>
+<li class="flex items-start gap-space-xs">
+<span class="text-primary font-bold">✓</span>
+<span>Quiet when nothing material is happening</span>
+</li>
+</ul>
+</div>
+<div class="mt-space-md pt-space-xs font-label-meta text-label-meta text-primary font-semibold">
+                  Result: Signal over noise
+                </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: HOW IT WORKS (CLEAN 3-STEP FLOW) -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl bg-surface-container-lowest border-y border-surface-container-high/40" id="how-it-works">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">How It Works</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[38px] text-on-surface mt-space-xs mb-space-sm font-newsreader">
+              Three steps. One quieter room.
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Free to join. Telegram required. Curated alerts—not another noisy feed.
+            </p>
+</div>
+<!-- 3-Step Sequence Flow Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Step 1 -->
+<div class="p-space-lg rounded-lg bg-surface-container-low border border-surface-container-high relative flex flex-col justify-between group hover:border-primary/40 transition-colors shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-2 py-0.5 rounded font-bold">STEP 01</span>
+<span class="material-symbols-outlined text-primary text-[24px]">send</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Join the channel</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Open Midnight Society on Telegram and join. One decision. Immediate access.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-outline flex items-center justify-between">
+<span>ACTION</span>
+<span class="text-on-surface font-semibold">@MidnightMarkets</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-space-lg rounded-lg bg-surface-container-low border border-surface-container-high relative flex flex-col justify-between group hover:border-primary/40 transition-colors shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-2 py-0.5 rounded font-bold">STEP 02</span>
+<span class="material-symbols-outlined text-primary text-[24px]">tune</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Optional: start the bot</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Set preferences so alerts better match the markets you watch.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-outline flex items-center justify-between">
+<span>OPTIONAL</span>
+<span class="text-primary font-semibold">@MidnightSocietyNewsBot</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-space-lg rounded-lg bg-surface-container-low border border-surface-container-high relative flex flex-col justify-between group hover:border-primary/40 transition-colors shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-code text-label-code text-primary bg-primary/10 px-2 py-0.5 rounded font-bold">STEP 03</span>
+<span class="material-symbols-outlined text-primary text-[24px]">notifications_active</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Get curated alerts</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Receive major-move posts when they clear the filter—then enjoy the quiet.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-outline flex items-center justify-between">
+<span>OUTCOME</span>
+<span class="text-tertiary font-semibold">SIGNAL OVER NOISE</span>
+</div>
+</div>
+</div>
+<!-- Bottom Feature Callout -->
+<div class="mt-space-lg p-space-md rounded bg-surface-container-high/30 border border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-space-md text-center sm:text-left">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">notifications_paused</span>
+<span class="font-label-code text-label-code text-on-surface">We post when it matters—then we stay quiet.</span>
+</div>
+<div class="flex items-center gap-space-sm font-label-code text-label-code text-secondary">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>MAJOR ALERTS ONLY</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: TACTILE DISPATCH SAMPLES (What Reaches Your Lock Screen) -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto" id="intel">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-md">
+<div>
+<div class="inline-flex items-center gap-space-xs font-label-caps text-label-caps text-primary uppercase tracking-widest mb-space-xs">
+              What You Get
+            </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-newsreader">
+              A signal filter for major alerts only
+            </h2>
+<p class="font-body-md text-body-md text-secondary max-w-[68ch]">
+              Midnight Society is market news on Telegram without the theater. We post curated market signals when stocks, crypto, or commodities make a move worth your attention—then we stay quiet.
+            </p>
+</div>
+<!-- Interactive Category Filters -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-lowest border border-surface-container-high rounded self-stretch md:self-auto w-full md:w-auto overflow-x-auto" id="filter-container">
+<button class="filter-btn active-filter px-space-md py-1 rounded font-label-code text-label-code transition-all bg-primary text-on-primary font-semibold" data-target="all" onclick="filterCards('all')">All Markets</button>
+<button class="filter-btn px-space-md py-1 rounded font-label-code text-label-code transition-all text-on-surface-variant hover:text-on-surface" data-target="macro" onclick="filterCards('macro')">Commodities</button>
+<button class="filter-btn px-space-md py-1 rounded font-label-code text-label-code transition-all text-on-surface-variant hover:text-on-surface" data-target="crypto" onclick="filterCards('crypto')">Crypto</button>
+<button class="filter-btn px-space-md py-1 rounded font-label-code text-label-code transition-all text-on-surface-variant hover:text-on-surface" data-target="equities" onclick="filterCards('equities')">Macro &amp; Rates</button>
+</div>
+</div>
+<!-- Solution pillars -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md mb-space-lg">
+<div class="p-space-md border-t border-primary/40">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Major moves</div>
+<p class="font-body-sm text-body-sm text-secondary">Alerts reserved for material events—not routine chatter.</p>
+</div>
+<div class="p-space-md border-t border-primary/40">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Cross-asset coverage</div>
+<p class="font-body-sm text-body-sm text-secondary">Stocks, crypto, and commodities in one calm channel.</p>
+</div>
+<div class="p-space-md border-t border-primary/40">
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">AI-filtered clarity</div>
+<p class="font-body-sm text-body-sm text-secondary">Noise screened out so belonging feels selective, not loud.</p>
+</div>
+</div>
+<!-- Telegram Message Mockup Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="dispatch-grid">
+<!-- Card 1: Commodities (Crude Supply Chokepoint) -->
+<div class="dispatch-card macro bg-surface-container-low border border-surface-container-high rounded-lg p-space-lg relative flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-primary-container/60 transition-all">
+<div>
+<!-- Header Meta -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/60 mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-meta text-label-meta text-primary font-bold uppercase">COMMODITIES</span>
+<span class="font-label-code text-label-code text-outline">BRENT · WTI</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-meta text-label-meta text-primary font-bold">PRIORITY 9.2</span>
+</div>
+</div>
+<!-- Content -->
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-md font-newsreader italic">
+                Straits Maritime Chokepoint Restriction Prompts Immediate +4.2% Supply Shock
+              </div>
+<div class="space-y-space-md font-body-sm text-body-sm text-secondary mb-space-md">
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">SUMMARY:</span>
+                  Unannounced commercial transit suspensions along primary crude channels trigger aggressive spot hedging by European refiners.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">WHY IT MATTERS:</span>
+                  Upward spillover into global shipping crack spreads puts headline inflation forecasts at odds with current central bank easing paths.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-tertiary uppercase font-bold tracking-wider block mb-1">ACTIONABLE IMPLICATION:</span>
+                  Monitor airline operational fuel margins and front-month tanker freight contracts for acute second-order volatility.
+                </div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container-high/40 flex items-center justify-between font-label-meta text-label-meta text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                03:14 UTC · DISPATCHED
+              </span>
+<span class="text-primary font-semibold">@MidnightMarkets</span>
+</div>
+</div>
+<!-- Card 2: Crypto (Open Interest Liquidation Cascade) -->
+<div class="dispatch-card crypto bg-surface-container-low border border-surface-container-high rounded-lg p-space-lg relative flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-primary-container/60 transition-all">
+<div>
+<!-- Header Meta -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/60 mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-meta text-label-meta text-tertiary font-bold uppercase">CRYPTO DERIVATIVES</span>
+<span class="font-label-code text-label-code text-outline">BTC · ETH</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-meta text-label-meta text-tertiary font-bold">PRIORITY 8.9</span>
+</div>
+</div>
+<!-- Content -->
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-md font-newsreader italic">
+                $840M Open Interest Cascade Eradicated Within 15 Minutes Across Perpetuals
+              </div>
+<div class="space-y-space-md font-body-sm text-body-sm text-secondary mb-space-md">
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">SUMMARY:</span>
+                  Aggressive market sell liquidity sweeps wiped out crowded leveraged longs across perpetual exchanges, resetting open interest to baseline.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">WHY IT MATTERS:</span>
+                  Annualized funding rates plummeted from overheated +28% to neutral 4%, with spot basis reclaiming healthy historical equilibrium.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-tertiary uppercase font-bold tracking-wider block mb-1">ACTIONABLE IMPLICATION:</span>
+                  Excess speculative froth fully purged; market structure transitioning back to institutional spot accumulation.
+                </div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container-high/40 flex items-center justify-between font-label-meta text-label-meta text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                01:42 UTC · DISPATCHED
+              </span>
+<span class="text-primary font-semibold">@MidnightMarkets</span>
+</div>
+</div>
+<!-- Card 3: Macro & Rates (Treasury Auction Tail) -->
+<div class="dispatch-card equities bg-surface-container-low border border-surface-container-high rounded-lg p-space-lg relative flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:border-primary-container/60 transition-all">
+<div>
+<!-- Header Meta -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high/60 mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-meta text-label-meta text-on-surface-variant font-bold uppercase">MACRO RATES</span>
+<span class="font-label-code text-label-code text-outline">US10Y · DXY</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-meta text-label-meta text-primary font-bold">PRIORITY 8.7</span>
+</div>
+</div>
+<!-- Content -->
+<div class="font-headline-sm text-headline-sm text-on-surface mb-space-md font-newsreader italic">
+                Unexpected US Treasury Auction Tail Dislocates Short-Duration Tech Multiples
+              </div>
+<div class="space-y-space-md font-body-sm text-body-sm text-secondary mb-space-md">
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">SUMMARY:</span>
+                  Primary dealer absorption surged significantly during the $42B benchmark 10-year note sale, revealing sudden foreign demand hesitation.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-wider block mb-1">WHY IT MATTERS:</span>
+                  Benchmark yields spiked +9.2 basis points in minutes, forcing prompt re-pricing of long-duration equity valuation multiples.
+                </div>
+<div class="p-2.5 rounded bg-surface-container-lowest/70 border border-surface-container-high/40">
+<span class="font-label-caps text-label-caps text-tertiary uppercase font-bold tracking-wider block mb-1">ACTIONABLE IMPLICATION:</span>
+                  High-multiple software and semiconductor indices show sharpest downward delta; adjust beta allocations accordingly.
+                </div>
+</div>
+</div>
+<div class="pt-space-sm border-t border-surface-container-high/40 flex items-center justify-between font-label-meta text-label-meta text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                18:05 UTC · DISPATCHED
+              </span>
+<span class="text-primary font-semibold">@MidnightMarkets</span>
+</div>
+</div>
+</div>
+<!-- Quick Channel Join Link -->
+<div class="mt-space-lg text-center">
+<a class="inline-flex items-center gap-space-sm text-primary hover:text-primary-fixed font-headline-sm text-body-md font-semibold tracking-wide group" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">
+<span>Join the channel for major-move alerts</span>
+<span class="material-symbols-outlined text-[18px] transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- SECTION 5: WHO IT IS ENGINEERED FOR -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl bg-surface-container-lowest border-y border-surface-container-high/40" id="audience">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+<div class="max-w-3xl mb-space-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Who It’s For</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[38px] text-on-surface mt-space-xs mb-space-sm font-newsreader">
+              People who choose signal over noise
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Midnight Society is for those who take pride in a sharper room—not a louder one.
+            </p>
+</div>
+<!-- 4 Target Archetypes -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Persona 1 -->
+<div class="p-space-lg rounded bg-surface-container-low border border-surface-container-high relative group hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[24px]">corporate_fare</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Operators who treat attention as capital</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  You protect focus like capital—major moves only, no endless feed tax.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-primary">
+                SIGNAL OVER NOISE
+              </div>
+</div>
+<!-- Persona 2 -->
+<div class="p-space-lg rounded bg-surface-container-low border border-surface-container-high relative group hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[24px]">currency_bitcoin</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Investors who want major moves without the circus</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  You want curated market signals across stocks, crypto, and commodities—without the theater.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-primary">
+                MAJOR ALERTS ONLY
+              </div>
+</div>
+<!-- Persona 3 -->
+<div class="p-space-lg rounded bg-surface-container-low border border-surface-container-high relative group hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[24px]">candlestick_chart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Builders who check markets, then get back to work</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  A quick read when it matters—then silence so you can ship.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-primary">
+                QUIET WHEN IT’S QUIET
+              </div>
+</div>
+<!-- Persona 4 -->
+<div class="p-space-lg rounded bg-surface-container-low border border-surface-container-high relative group hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded bg-surface-container-highest flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[24px]">shield_person</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Anyone proud to be selective with what they read</h3>
+<p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+                  Belonging feels selective, not loud—curated alerts, not another noisy feed.
+                </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-surface-container-high/60 font-label-meta text-label-meta text-primary">
+                SELECTIVE BY DESIGN
+              </div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: WHY IT'S 100% FREE & ZERO-COMMERCIAL TRAP -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
+<div class="p-space-lg md:p-space-xl rounded-xl bg-surface-container-low border border-surface-container-high relative overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-space-xs font-label-caps text-label-caps text-primary uppercase tracking-widest mb-space-xs">
+                Trust
+              </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm font-newsreader">
+                Transparent filtering. No spam theater.
+              </h2>
+<p class="font-body-md text-body-md text-secondary mb-space-md leading-relaxed">
+                Not financial advice—curated market information for awareness only. Always do your own research.
+              </p>
+<div class="p-space-md rounded bg-surface-container-lowest border border-outline-variant/30 text-outline font-body-sm text-body-sm leading-relaxed">
+<span class="font-bold text-on-surface block mb-1">IMPORTANT:</span>
+                Midnight Society shares curated market information for awareness. Nothing here is investment, trading, or financial advice. Always do your own research.
+              </div>
+</div>
+<div class="lg:col-span-4 flex flex-col items-center justify-center p-space-lg bg-surface-container-lowest rounded-lg border border-surface-container-high text-center">
+<img alt="Midnight Society Brand Emblem" class="w-16 h-16 object-contain mb-space-sm rounded-full border border-primary/40 shadow-[0_0_20px_rgba(242,202,80,0.2)]" src="/stitch/asset-0.jpg"/>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold">Free to join</div>
+<p class="font-body-sm text-body-sm text-secondary mt-1 mb-space-md">
+                Telegram required. Curated alerts—not another noisy feed.
+              </p>
+<a class="px-space-md py-space-xs rounded bg-primary text-on-primary font-headline-sm text-body-sm font-semibold tracking-wide hover:bg-primary-fixed transition-colors" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">
+                Join the Channel on Telegram
+              </a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: FAQ (ACCORDION STRUCTURE) -->
+<section class="w-full py-12 sm:py-16 md:py-space-xl bg-surface-container-lowest border-y border-surface-container-high/40" id="faq">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+<div class="text-center mb-space-xl">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">FAQ</span>
+<h2 class="font-headline-lg text-headline-lg md:text-[38px] text-on-surface mt-space-xs mb-space-xs font-newsreader">
+              Frequently Asked Questions
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Straight answers before you join the quieter room.
+            </p>
+</div>
+<!-- Accordion Stack -->
+<div class="space-y-space-sm" id="faq-accordion">
+<!-- Item 1 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">What is Midnight Society?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  Midnight Society is a Telegram market-intelligence channel that filters noise and posts only major moves across stocks, crypto, and commodities. It is built for people who want curated market signals—not an endless feed.
+                </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">Is it free to join?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  Yes. Joining the channel on Telegram is free. You only need a Telegram account.
+                </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">What kinds of alerts will I get?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  Major market-move alerts only—stock, crypto, and commodities events that clear our filter. You will not get routine chatter, memes, or low-signal noise.
+                </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">Do I need the bot?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  No. The channel works on its own. The optional bot lets you set preferences so alerts better match what you care about.
+                </p>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">Is this financial advice?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  No. Midnight Society shares curated market information for awareness. Nothing here is investment, trading, or financial advice. Always do your own research.
+                </p>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="faq-item rounded bg-surface-container-low border border-surface-container-high overflow-hidden transition-all">
+<button class="faq-toggle w-full p-space-md text-left flex items-center justify-between gap-space-md hover:bg-surface-container/50">
+<span class="font-headline-sm text-body-lg text-on-surface font-semibold">How is this different from other market news Telegram channels?</span>
+<span class="material-symbols-outlined text-primary text-[20px] transition-transform duration-300 faq-icon">expand_more</span>
+</button>
+<div class="faq-content max-h-0 overflow-hidden transition-all duration-300 px-space-md">
+<p class="font-body-md text-body-md text-secondary pb-space-md">
+                  Most channels maximize volume. We maximize clarity. Posts are AI-filtered toward major alerts only, so your attention stays selective and your feed stays quiet.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINAL CONVERSION BAND -->
+<section class="relative w-full py-24 overflow-hidden border-t border-surface-container-high/50 flex items-center justify-center">
+<!-- Atmospheric Underlayer -->
+<div class="absolute inset-0 z-0 opacity-25">
+<div class="w-full h-full bg-cover bg-center filter grayscale brightness-50" style="background-image: url('/stitch/asset-1.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background"></div>
+</div>
+<div class="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 text-center">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 rounded-full bg-surface-container-lowest border border-primary/30 mb-space-md shadow-[0_0_16px_rgba(212,175,55,0.15)]">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-code text-label-code text-primary uppercase font-semibold">FREE TO JOIN · TELEGRAM REQUIRED</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg md:text-[48px] md:leading-[56px] text-on-surface tracking-tight mb-space-md font-newsreader">
+            Join the quieter room
+          </h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-[62ch] mx-auto mb-space-xl">
+            Free to join. Telegram required. Curated alerts—not another noisy feed. One clear action.
+          </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md w-full max-w-md mx-auto mb-space-md">
+<a class="w-full sm:w-auto px-space-xl py-space-md rounded bg-primary text-on-primary font-headline-sm text-body-lg font-semibold tracking-wide flex items-center justify-center gap-space-sm shadow-[0_0_28px_rgba(212,175,55,0.4)] hover:bg-primary-fixed hover:shadow-[0_0_36px_rgba(212,175,55,0.6)] transition-all transform hover:-translate-y-0.5 active:scale-[0.99]" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Join the Channel on Telegram</span>
+</a>
+</div>
+<div class="flex items-center justify-center gap-space-md font-label-code text-label-code text-outline">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="https://t.me/MidnightSocietyNewsBot" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[14px]">smart_toy</span>
+<span>Open the bot for preferences</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- Interactive Logic: filters, FAQ, smooth scroll, reveals, active nav -->
+<script>
+(function msMotionInit() {
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var headerOffset = function () {
+    var header = document.querySelector('.ms-site-header');
+    var ticker = 36;
+    return (header ? header.offsetHeight : 64) + ticker + 12;
+  };
+
+  function scrollToHash(hash, push) {
+    if (!hash || hash === '#') return false;
+    var target = document.querySelector(hash);
+    if (!target) return false;
+    var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: reduceMotion ? 'auto' : 'smooth' });
+    if (push !== false && history.pushState) {
+      history.pushState(null, '', hash);
+    }
+    return true;
+  }
+
+  // Smooth in-page nav (desktop + mobile + footer)
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      if (!document.querySelector(hash)) return;
+      e.preventDefault();
+      scrollToHash(hash, true);
+      var panel = document.getElementById('mobile-nav');
+      var btn = document.querySelector('.ms-mobile-toggle');
+      if (panel && !panel.hidden) {
+        panel.hidden = true;
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'false');
+          var icon = btn.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = 'menu';
+        }
+      }
+    });
+  });
+
+  // Active nav while scrolling
+  var sectionIds = ['philosophy', 'how-it-works', 'intel', 'audience', 'faq'];
+  var navLinks = Array.prototype.slice.call(
+    document.querySelectorAll('.ms-nav-links a[href^="#"], .ms-nav-panel a[href^="#"]')
+  );
+
+  function setActiveNav(id) {
+    navLinks.forEach(function (a) {
+      var match = a.getAttribute('href') === '#' + id;
+      a.classList.toggle('is-active', match);
+      if (match) {
+        a.classList.add('text-primary', 'font-semibold');
+        a.classList.remove('text-on-surface-variant');
+      } else {
+        a.classList.remove('text-primary', 'font-semibold');
+        if (!a.closest('.ms-nav-panel')) {
+          a.classList.add('text-on-surface-variant');
+        }
+      }
+    });
+  }
+
+  function onScrollSpy() {
+    var probe = window.scrollY + headerOffset() + 24;
+    var current = sectionIds[0];
+    sectionIds.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= probe) current = id;
+    });
+    setActiveNav(current);
+  }
+  window.addEventListener('scroll', onScrollSpy, { passive: true });
+  onScrollSpy();
+
+  // Scroll reveals
+  document.querySelectorAll('main > div > section').forEach(function (section, index) {
+    if (index === 0) return;
+    section.classList.add('ms-reveal');
+  });
+  document.querySelectorAll('#how-it-works .grid > div, #audience .grid > div, #faq-accordion .faq-item').forEach(function (el, i) {
+    el.classList.add('ms-reveal', 'ms-reveal-delay-' + ((i % 3) + 1));
+  });
+  document.querySelectorAll('#intel .dispatch-card, #intel .grid.grid-cols-1.md\\:grid-cols-3 > div').forEach(function (el, i) {
+    el.classList.add('ms-reveal', 'ms-reveal-delay-' + ((i % 3) + 1));
+  });
+  var footerInner = document.querySelector('footer > div');
+  if (footerInner) footerInner.classList.add('ms-reveal');
+
+  if (reduceMotion) {
+    document.querySelectorAll('.ms-reveal').forEach(function (el) {
+      el.classList.add('is-visible');
+    });
+  } else if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    document.querySelectorAll('.ms-reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.ms-reveal').forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // Filter tabs with fade
+  window.filterCards = function (category) {
+    var cards = document.querySelectorAll('.dispatch-card');
+    var buttons = document.querySelectorAll('.filter-btn');
+
+    buttons.forEach(function (btn) {
+      var active = btn.getAttribute('data-target') === category;
+      btn.classList.toggle('bg-primary', active);
+      btn.classList.toggle('text-on-primary', active);
+      btn.classList.toggle('font-semibold', active);
+      btn.classList.toggle('text-on-surface-variant', !active);
+    });
+
+    cards.forEach(function (card) {
+      var show = category === 'all' || card.classList.contains(category);
+      if (reduceMotion) {
+        card.style.display = show ? 'flex' : 'none';
+        card.classList.remove('is-filtering-out', 'is-filtering-in');
+        return;
+      }
+      if (show) {
+        if (card.style.display === 'none') {
+          card.style.display = 'flex';
+          card.classList.add('is-filtering-out');
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+              card.classList.remove('is-filtering-out');
+              card.classList.add('is-filtering-in');
+            });
+          });
+        } else {
+          card.classList.remove('is-filtering-out');
+          card.classList.add('is-filtering-in');
+        }
+      } else {
+        card.classList.add('is-filtering-out');
+        card.classList.remove('is-filtering-in');
+        window.setTimeout(function () {
+          if (card.classList.contains('is-filtering-out')) {
+            card.style.display = 'none';
+          }
+        }, 320);
+      }
+    });
+  };
+
+  // FAQ accordion (smoother)
+  document.querySelectorAll('.faq-toggle').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var content = button.nextElementSibling;
+      var icon = button.querySelector('.faq-icon');
+      var isExpanded = content.classList.contains('is-open');
+
+      document.querySelectorAll('.faq-content').forEach(function (c) {
+        c.style.maxHeight = '0px';
+        c.classList.remove('is-open');
+      });
+      document.querySelectorAll('.faq-icon').forEach(function (i) {
+        i.style.transform = 'rotate(0deg)';
+      });
+      document.querySelectorAll('.faq-item').forEach(function (item) {
+        item.classList.remove('border-primary/40');
+      });
+
+      if (!isExpanded) {
+        content.classList.add('is-open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+        button.closest('.faq-item').classList.add('border-primary/40');
+      }
+    });
+  });
+
+  // Honor deep links on load
+  if (location.hash && document.querySelector(location.hash)) {
+    window.setTimeout(function () {
+      scrollToHash(location.hash, false);
+    }, 50);
+  }
+})();
+    </script>
+</main>
+<!-- NOCTURNAL FOOTER -->
+<footer class="w-full bg-surface-container-lowest mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.5)] border-t border-surface-container-high/40">
+<div class="w-full px-4 sm:px-6 md:px-8 lg:px-12 py-12 sm:py-16 md:py-space-xl">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg pb-space-lg">
+<div class="flex items-center gap-space-sm">
+<img alt="Midnight Society Logo" class="w-8 h-8 rounded-full border border-primary/30" src="/stitch/asset-0.jpg"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider font-semibold">Midnight Society</span>
+<span class="font-label-code text-label-code text-on-surface-variant">Curated market alerts on Telegram</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-sm">
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors" href="https://t.me/MidnightMarkets" rel="noopener noreferrer" target="_blank">Telegram Channel</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors" href="https://t.me/MidnightSocietyNewsBot" rel="noopener noreferrer" target="_blank">Preferences Bot</a>
+<a class="font-label-caps text-label-caps uppercase text-on-surface-variant hover:text-primary transition-colors" href="#intel">What You Get</a>
+</div>
+</div>
+<div class="pt-space-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md border-t border-surface-container-high/40">
+<p class="font-body-sm text-body-sm text-outline max-w-[68ch]">
+          Transparent filtering. No spam theater. Not financial advice—curated market information for awareness only. Always do your own research.
+        </p>
+<div class="footer-copy font-label-code text-label-code text-outline md:whitespace-nowrap">
+          © 2025 Midnight Society. All rights reserved.
+        </div>
+</div>
+</div>
+</footer>
+<script>
+(function msMobileNavInit(){
+  var btn = document.querySelector('.ms-mobile-toggle');
+  var panel = document.getElementById('mobile-nav');
+  if (!btn || !panel) return;
+  function close() {
+    panel.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.querySelector('.material-symbols-outlined').textContent = 'menu';
+  }
+  function open() {
+    panel.hidden = false;
+    btn.setAttribute('aria-expanded', 'true');
+    btn.querySelector('.material-symbols-outlined').textContent = 'close';
+  }
+  btn.addEventListener('click', function () {
+    if (panel.hidden) open(); else close();
+  });
+  panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', close);
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1024) close();
+  });
+})();
+</script>
+</body></html>
