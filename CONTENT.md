@@ -1,19 +1,19 @@
-# Midnight Society — Production copy, wireframes & image prompts
+# Midnight Market — Production copy, wireframes & image prompts
 
 ## A) SEO
 
-**Title (41 chars):** Midnight Society | Curated Market Alerts
+**Title (41 chars):** Midnight Market | Curated Market Alerts
 
-**Meta (≤155):** Join Midnight Society for AI-filtered stock, crypto & commodities alerts. Major moves only—signal over noise. Join free on Telegram.
+**Meta (≤155):** Join Midnight Market for AI-filtered stock, crypto & commodities alerts. Major moves only—signal over noise. Join free on Telegram.
 
-**Primary keywords:** market news telegram · stock crypto commodities alerts · curated market signals · midnight society
+**Primary keywords:** market news telegram · stock crypto commodities alerts · curated market signals · midnight market
 
 ---
 
 ## A) Page copy
 
 ### 1. Hero
-- **Brand:** Midnight Society
+- **Brand:** Midnight Market
 - **H1:** Major market moves. Nothing else.
 - **Support:** A quieter Telegram channel for people who choose signal over noise across stocks, crypto, and commodities.
 - **Primary CTA:** Join the Channel on Telegram → https://t.me/MidnightMarkets
@@ -27,20 +27,20 @@
 
 ### 3. Solution / What you get
 - **H2:** A signal filter for major alerts only
-- Midnight Society is market news on Telegram without the theater. We post curated market signals when stocks, crypto, or commodities make a move worth your attention—then we stay quiet.
+- Midnight Market is market news on Telegram without the theater. We post curated market signals when stocks, crypto, or commodities make a move worth your attention—then we stay quiet.
 - **Major moves** — Alerts reserved for material events—not routine chatter.
 - **Cross-asset coverage** — Stocks, crypto, and commodities in one calm channel.
 - **AI-filtered clarity** — Noise screened out so belonging feels selective, not loud.
 
 ### 4. How it works
 - **H2:** Three steps. One quieter room.
-1. Join the channel — Open Midnight Society on Telegram and join. One decision. Immediate access.
+1. Join the channel — Open Midnight Market on Telegram and join. One decision. Immediate access.
 2. Optional: start the bot — Set preferences so alerts better match the markets you watch.
 3. Get curated alerts — Receive major-move posts when they clear the filter—then enjoy the quiet.
 
 ### 5. Who it’s for
 - **H2:** People who choose signal over noise
-- Midnight Society is for those who take pride in a sharper room—not a louder one.
+- Midnight Market is for those who take pride in a sharper room—not a louder one.
 - Operators who treat attention as capital
 - Investors who want major moves without the circus
 - Builders who check markets, then get back to work

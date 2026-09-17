@@ -1,17 +1,17 @@
 export const SITE = {
-  name: "Midnight Society",
+  name: "Midnight Market",
   channelUrl: "https://t.me/MidnightMarkets",
   botUrl: "https://t.me/MidnightSocietyNewsBot",
-  title: "Midnight Society | Curated Market Alerts",
+  title: "Midnight Market | Curated Market Alerts",
   description:
-    "Join Midnight Society for AI-filtered stock, crypto & commodities alerts. Major moves only—signal over noise. Join free on Telegram.",
+    "Join Midnight Market for AI-filtered stock, crypto & commodities alerts. Major moves only—signal over noise. Join free on Telegram.",
 } as const
 
 export const FAQ_ITEMS = [
   {
-    question: "What is Midnight Society?",
+    question: "What is Midnight Market?",
     answer:
-      "Midnight Society is a Telegram market-intelligence channel that filters noise and posts only major moves across stocks, crypto, and commodities. It is built for people who want curated market signals—not an endless feed.",
+      "Midnight Market is a Telegram market-intelligence channel that filters noise and posts only major moves across stocks, crypto, and commodities. It is built for people who want curated market signals—not an endless feed.",
   },
   {
     question: "Is it free to join?",
@@ -31,7 +31,7 @@ export const FAQ_ITEMS = [
   {
     question: "Is this financial advice?",
     answer:
-      "No. Midnight Society shares curated market information for awareness. Nothing here is investment, trading, or financial advice. Always do your own research.",
+      "No. Midnight Market shares curated market information for awareness. Nothing here is investment, trading, or financial advice. Always do your own research.",
   },
   {
     question: "How is this different from other market news Telegram channels?",

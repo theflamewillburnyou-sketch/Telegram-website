@@ -1,6 +1,6 @@
-# Midnight Society — Landing site
+# Midnight Market — Landing site
 
-Landing page for the **Midnight Society** Telegram market-alerts channel.
+Landing page for the **Midnight Market** Telegram market-alerts channel.
 
 The live page is the static Stitch export at `/stitch/landing.html`. Next.js redirects `/` there and serves assets from `public/`.
 

@@ -4,8 +4,9 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: "/",
-        destination: "/stitch/landing.html",
+        // Old/direct Stitch URL → clean root
+        source: "/stitch/landing.html",
+        destination: "/",
         permanent: false,
       },
     ]
